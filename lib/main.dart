@@ -1,10 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_where/screens/Guest.dart';
-import 'package:inventory_where/screens/guest/Auth.dart';
-import 'package:inventory_where/screens/guest/Password.dart';
-import 'package:inventory_where/screens/guest/Term.dart';
 
-void main() => runApp(App());
+void main() async {
+  // Initialize all widgets before continue
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Connect app to google-services.json
+  await Firebase.initializeApp();
+
+  runApp(App());
+}
 
 class App extends StatelessWidget {
   @override
